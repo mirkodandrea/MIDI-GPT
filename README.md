@@ -173,4 +173,18 @@ To kill all the sessions
 pkill -u username
 ```
 
+## Build docker image and run the inference
+### build the docker image
+```bash
+docker build --platform=linux/amd64 -t midigpt .
+```
 
+### run a container with a volume
+```bash
+docker run  --platform="linux/amd64" -v /Users/mirko/dev/zenarmonics/MIDI-GPT/python_scripts_for_testing:/app/python_scripts_for_testing -it midigpt
+```
+### from the bash inside the container, run the example script
+```bash
+cd python_scripts_for_testing/
+python pythoninferencetest.py --ckpt ../models/EXPRESSIVE_ENCODER_RES_1920_12_GIGAMIDI_CKPT_150K.pt --midi mtest.mid --out prova.mid
+```
