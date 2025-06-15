@@ -181,7 +181,7 @@ docker build --platform=linux/amd64 -t midigpt .
 
 ### run a container with a volume
 ```bash
-docker run  --platform="linux/amd64" -v /Users/mirko/dev/zenarmonics/MIDI-GPT/python_scripts_for_testing:/app/python_scripts_for_testing -it midigpt
+docker run  --platform="linux/amd64" -v ./python_scripts_for_testing:/app/python_scripts_for_testing -it midigpt
 ```
 ### from the bash inside the container, run the example script
 ```bash
