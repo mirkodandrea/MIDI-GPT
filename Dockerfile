@@ -88,5 +88,6 @@ ENV PYTHONPATH=/app/python_lib
 RUN rm -rf /build
 RUN python3 -c "import midigpt; print('✅ midigpt built and importable')"
 
+RUN python3 -m pip install --no-cache-dir gradio
 
 CMD ["/bin/bash"]
